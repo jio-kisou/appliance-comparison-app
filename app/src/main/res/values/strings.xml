@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">appliance-comparison-app</string>
+    <string name="android">android</string>
 </resources>
