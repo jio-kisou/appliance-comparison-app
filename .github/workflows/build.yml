@@ -1,16 +1,12 @@
-name: CI build with Gradle
+name: CI Test with Gradle
 
 on:
   pull_request:
-    branches: [ "main" ]
-    types:
-        - closed
 
 jobs:
-  build:
+  Test:
 
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     permissions:
         contents: read
         packages: write
@@ -22,6 +18,8 @@ jobs:
       with:
         java-version: '11'
         distribution: 'corretto'
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
     - name: Test with Gradle
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
