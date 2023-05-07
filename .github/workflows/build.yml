@@ -7,7 +7,6 @@ jobs:
   Test:
 
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     permissions:
         contents: read
         packages: write
